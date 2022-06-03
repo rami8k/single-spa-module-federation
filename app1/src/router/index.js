@@ -1,19 +1,19 @@
-import Vue from "vue";
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import View1 from '../views/View1.vue'
-
-Vue.use(VueRouter)
+import View2 from '../views/View2.vue'
 
 export function createRouter() {
-  const router = new VueRouter({
+  return new Router({
     mode: 'history',
     routes: [
       {
         path: '/',
         component: View1
+      },
+      {
+        path: '/view2',
+        component: View2
       }
     ]
   })
-
-  return router
 }

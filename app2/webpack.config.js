@@ -6,11 +6,11 @@ const path = require("path");
 
 module.exports = {
   entry: {
-    main: "./src/main-spa.js",
+    main: "./src/set-public-path.js",
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'http://localhost:3002/dist/'
+    publicPath: '' // This is required to stop webpack from setting a default publicPath
   },
   module: {
     rules: [
@@ -48,13 +48,11 @@ module.exports = {
       template: path.resolve(__dirname, "public", "index.html")
     }),
     new ModuleFederationPlugin({
-      name: "app2",
+      name: "main",
       library: { type: 'system' },
       filename: "remoteEntry.js",
-      exposes: [
-        { 'view1': './src/views/View1' }
-      ],
-      shared: ['vue']
+      exposes: { 'Main': './src/main-spa' },
+      shared: ['vue', 'vue-router']
     })
   ]
 };

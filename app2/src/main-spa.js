@@ -1,19 +1,20 @@
-// import './set-public-path'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
+
 import singleSpaVue from 'single-spa-vue'
 import App from './App.vue'
 import { createRouter } from './router'
 
-const router = createRouter()
-
 Vue.config.productionTip = false
+Vue.use(VueRouter)
+
+const router = createRouter()
 
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
-    render: (h) => h(App),
-    template: '<App />',
     router,
+    render: (h) => h(App)
   }
 })
 

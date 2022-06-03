@@ -1,11 +1,8 @@
 <template>
   <div>
     App1 - View1
-    <Icon>
-      <template v-slot:label>
-        some component
-      </template>
-    </Icon>
+    <br>
+    <a href="/view2">go to app1/view2</a>
   </div>
 </template>
 
@@ -13,12 +10,7 @@
 import Vue from 'vue'
 import singleSpaVue from 'single-spa-vue'
 
-import Icon from '../components/Icon.vue'
-
 const Article = {
-  components: {
-    Icon
-  },
 }
 
 const vueLifecycles = singleSpaVue({

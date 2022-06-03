@@ -10,10 +10,10 @@
       <script type="systemjs-importmap">
         {
           "imports": {
-            "app1": "http://localhost:3001/dist/remoteEntry.js",
-            "app1/": "http://localhost:3001/dist/",
-            "app2": "http://localhost:3002/dist/remoteEntry.js",
-            "app2/": "http://localhost:3002/dist/"
+            "@org/app1": "http://localhost:3001/dist/remoteEntry.js",
+            "@org/app1/": "http://localhost:3001/dist/",
+            "@org/app2": "http://localhost:3002/dist/remoteEntry.js",
+            "@org/app2/": "http://localhost:3002/dist/"
           }
         }
     </script>
@@ -31,11 +31,9 @@
   </head>
   <body>
     <div class="mui-container">
-      <div id="single-spa-application:app1-view1"></div>
+      <div id="single-spa-application:@org/app1"></div>
       <br><br>
-      <div id="single-spa-application:app1-view2"></div>
-      <br><br>
-      <div id="single-spa-application:app2-view2"></div>
+      <div id="single-spa-application:@org/app2"></div>
     </div>
   </body>
 </html>
