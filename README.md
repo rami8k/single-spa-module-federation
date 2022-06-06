@@ -12,6 +12,7 @@ Features:
 To run each app navigate to the app directory and run
 ```
 yarn
+yarn build
 yarn serve
 ```
 
